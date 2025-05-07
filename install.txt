@@ -19,3 +19,9 @@ Error: INSTALLATION FAILED: validati
 
 microk8s helm3 install openlm_config_genric charts/openlm_config_generic/ -n openlm -f values.yaml
 Error: INSTALLATION FAILED: release name "openlm_config_genric": invalid release name, must match regex ^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$ and the length must not be longer than 53
+
+
+
+sasm0p000252:/home/SAM_Admin/openlm # microk8s helm install usersandgroupserviceui charts/usersandgroupsserviceui/ -n openlm -f values.yaml
+Error: INSTALLATION FAILED: 1 error occurred:
+        * Ingress.networking.k8s.io "usersandgroupsserviceui-ingress" is invalid: [spec.rules[0].host: Invalid value: "<loadbalancer_hostname>": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.tls[0].hosts[0]: Invalid value: "<loadbalancer_hostname>": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')]
