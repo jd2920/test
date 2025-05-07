@@ -16,3 +16,6 @@ Error: INSTALLATION FAILED: error unpacking kafka-rest-proxy in openlm_mono: val
 sasm0p000252:/home/SAM_Admin/openlm # vi Chart.yaml
 sasm0p000252:/home/SAM_Admin/openlm # microk8s helm3 install openlm . -n openlm -f values.yaml
 Error: INSTALLATION FAILED: validati
+
+microk8s helm3 install openlm_config_genric charts/openlm_config_generic/ -n openlm -f values.yaml
+Error: INSTALLATION FAILED: release name "openlm_config_genric": invalid release name, must match regex ^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$ and the length must not be longer than 53
