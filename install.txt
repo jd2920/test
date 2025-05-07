@@ -91,3 +91,7 @@ replicaset.apps/redis-98cdf9bb                             1         1         1
 
 NAME                                READY   AGE
 statefulset.apps/kafka-controller   1/1     20h
+
+microk8s kubectl get svc -n ingress
+NAME                     TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
+nginx-ingress-microk8s   LoadBalancer   10.152.183.214   192.168.1.240   80:30642/TCP,443:32035/TCP   46m
