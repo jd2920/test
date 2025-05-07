@@ -1,0 +1,18 @@
+sasm0p000252:/home/SAM_Admin/openlm # microk8s helm3 install openlm . -n openlm -f values.yaml
+Error: INSTALLATION FAILED: failed to parse values.yaml: error converting YAML to JSON: yaml: line 2149: did not find expected key
+sasm0p000252:/home/SAM_Admin/openlm # nan0 +2149 values.yaml
+bash: nan0: command not found
+sasm0p000252:/home/SAM_Admin/openlm # nano +2149 values.yaml
+bash: nano: command not found
+sasm0p000252:/home/SAM_Admin/openlm # vi +2149 values.yaml
+sasm0p000252:/home/SAM_Admin/openlm # microk8s helm3 install openlm . -n openlm -f values.yaml
+Error: INSTALLATION FAILED: validation: chart.metadata.version "latest" is invalid
+sasm0p000252:/home/SAM_Admin/openlm # vi charts/
+sasm0p000252:/home/SAM_Admin/openlm # ls
+Chart.yaml  charts  values.yaml
+sasm0p000252:/home/SAM_Admin/openlm # vi Chart.yaml
+sasm0p000252:/home/SAM_Admin/openlm # microk8s helm3 install openlm . -n openlm -f values.yaml
+Error: INSTALLATION FAILED: error unpacking kafka-rest-proxy in openlm_mono: validation: chart.metadata.version "latest" is invalid
+sasm0p000252:/home/SAM_Admin/openlm # vi Chart.yaml
+sasm0p000252:/home/SAM_Admin/openlm # microk8s helm3 install openlm . -n openlm -f values.yaml
+Error: INSTALLATION FAILED: validati
