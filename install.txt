@@ -25,3 +25,13 @@ Error: INSTALLATION FAILED: release name "openlm_config_genric": invalid release
 sasm0p000252:/home/SAM_Admin/openlm # microk8s helm install usersandgroupserviceui charts/usersandgroupsserviceui/ -n openlm -f values.yaml
 Error: INSTALLATION FAILED: 1 error occurred:
         * Ingress.networking.k8s.io "usersandgroupsserviceui-ingress" is invalid: [spec.rules[0].host: Invalid value: "<loadbalancer_hostname>": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'), spec.tls[0].hosts[0]: Invalid value: "<loadbalancer_hostname>": a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')]
+
+
+
+Events:
+  Type     Reason                           Age                     From     Message
+  ----     ------                           ----                    ----     -------
+  Warning  Failed                           4m35s (x12 over 6m47s)  kubelet  Error: configmap "openlm-config-generic" not found
+  Warning  FailedToRetrieveImagePullSecret  115s (x25 over 7m4s)    kubelet  Unable to retrieve some image pull secrets (devinternal); attempting to pull the image may not succeed.
+  Normal   Pulled                           115s (x24 over 6m47s)   kubelet  Container image "public.ecr.aws/r3q3q2f4/olm-usersandgroupsserviceui:1.241121.0929" already present on machine
+
