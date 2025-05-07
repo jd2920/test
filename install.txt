@@ -35,3 +35,5 @@ Events:
   Warning  FailedToRetrieveImagePullSecret  115s (x25 over 7m4s)    kubelet  Unable to retrieve some image pull secrets (devinternal); attempting to pull the image may not succeed.
   Normal   Pulled                           115s (x24 over 6m47s)   kubelet  Container image "public.ecr.aws/r3q3q2f4/olm-usersandgroupsserviceui:1.241121.0929" already present on machine
 
+microk8s helm3 install openlm-config-genric charts/openlm-config-generic/ -n openlm -f values.yaml
+Error: INSTALLATION FAILED: repo charts not found
