@@ -37,3 +37,57 @@ Events:
 
 microk8s helm3 install openlm-config-genric charts/openlm-config-generic/ -n openlm -f values.yaml
 Error: INSTALLATION FAILED: repo charts not found
+
+
+*********************************************************************************************************************************************************************
+
+ microk8s kubectl get all -n openlm
+NAME                                                 READY   STATUS                       RESTARTS   AGE
+pod/kafka-controller-0                               1/1     Running                      0          20h
+pod/mongodb-5c8b9d7598-knl7s                         1/1     Running                      0          8d
+pod/openlm-kafka-rest-proxy-549c86c99d-6n6l6         1/1     Running                      0          19h
+pod/openlm-projectsserviceui-7fdf688b8c-gk7vb        0/1     CreateContainerConfigError   0          70m
+pod/openlm-sessioncreator-6cdd6b585b-q5cwm           0/1     CreateContainerConfigError   0          74m
+pod/openlm-usageservice-6fcb56dbb6-kbhb7             0/1     CreateContainerConfigError   0          87m
+pod/openlm-usersandgroupsservice-85594f9489-qrxbq    0/1     CreateContainerConfigError   0          76m
+pod/openlm-usersandgroupsserviceui-66c88476c-mb7bp   0/1     CreateContainerConfigError   0          81m
+pod/postgres-9f48dd995-gcpbj                         1/1     Running                      0          21h
+pod/redis-98cdf9bb-vspff                             1/1     Running                      0          8d
+
+NAME                                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+service/kafka                            ClusterIP   10.152.183.173   <none>        9092/TCP                     20h
+service/kafka-controller-headless        ClusterIP   None             <none>        9094/TCP,9092/TCP,9093/TCP   20h
+service/mongodb-service                  ClusterIP   10.152.183.23    <none>        27017/TCP                    8d
+service/openlm-kafka-rest-proxy          ClusterIP   10.152.183.127   <none>        8082/TCP                     19h
+service/openlm-projectsserviceui         ClusterIP   10.152.183.146   <none>        5032/TCP                     70m
+service/openlm-sessioncreator            ClusterIP   10.152.183.30    <none>        5037/TCP                     74m
+service/openlm-usageservice              ClusterIP   10.152.183.237   <none>        8101/TCP                     87m
+service/openlm-usersandgroupsservice     ClusterIP   10.152.183.147   <none>        7084/TCP                     76m
+service/openlm-usersandgroupsserviceui   ClusterIP   10.152.183.176   <none>        80/TCP                       81m
+service/postgres                         ClusterIP   10.152.183.71    <none>        5432/TCP                     21h
+service/redis                            ClusterIP   10.152.183.152   <none>        6379/TCP                     8d
+
+NAME                                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/mongodb                          1/1     1            1           8d
+deployment.apps/openlm-kafka-rest-proxy          1/1     1            1           19h
+deployment.apps/openlm-projectsserviceui         0/1     1            0           70m
+deployment.apps/openlm-sessioncreator            0/1     1            0           74m
+deployment.apps/openlm-usageservice              0/1     1            0           87m
+deployment.apps/openlm-usersandgroupsservice     0/1     1            0           76m
+deployment.apps/openlm-usersandgroupsserviceui   0/1     1            0           81m
+deployment.apps/postgres                         1/1     1            1           21h
+deployment.apps/redis                            1/1     1            1           8d
+
+NAME                                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/mongodb-5c8b9d7598                         1         1         1       8d
+replicaset.apps/openlm-kafka-rest-proxy-549c86c99d         1         1         1       19h
+replicaset.apps/openlm-projectsserviceui-7fdf688b8c        1         1         0       70m
+replicaset.apps/openlm-sessioncreator-6cdd6b585b           1         1         0       74m
+replicaset.apps/openlm-usageservice-6fcb56dbb6             1         1         0       87m
+replicaset.apps/openlm-usersandgroupsservice-85594f9489    1         1         0       76m
+replicaset.apps/openlm-usersandgroupsserviceui-66c88476c   1         1         0       81m
+replicaset.apps/postgres-9f48dd995                         1         1         1       21h
+replicaset.apps/redis-98cdf9bb                             1         1         1       8d
+
+NAME                                READY   AGE
+statefulset.apps/kafka-controller   1/1     20h
