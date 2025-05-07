@@ -16,3 +16,69 @@ spec:
       port: 443
       targetPort: 443
 EOF
+
+namespace: openlm
+taints: 
+affinity: 
+generic:
+  name: openlm-config-generic
+logging:
+  name: openlm-logging-config-generic
+telemetry:
+  name: openlm-telemetry-config-generic
+configmap:
+  name: openlm-config-generic
+  vars_list:
+    ML_USAGEPATTERNS_PATH: "/opt/usagepatterns"
+    ML_PYTHON_RUNNER: "/usr/local/bin/python"
+    CLOUD_MODE: "false"
+    DB_TYPE: "SqlServer_SQLServerAuth"
+    INFRASTRUCTURE__CLOUDMODE: "false"
+    INFRASTRUCTURE__KAFKABOOTSTRAPSERVERS: "kafka.openlm.svc.cluster.local:9092"
+    INFRASTRUCTURE__MONGODB__CONNECTIONSTRING: "mongodb://root:password@mongodb-service.openlm.svc.cluster.local:27017"
+    INFRASTRUCTURE__MONGODB__TELEMETRYSETTINGS__CAPTUREQUERYTEXT: "false"
+    INFRASTRUCTURE__MONGODB__TELEMETRYSETTINGS__ENABLETELEMETRY: "true"
+    INFRASTRUCTURE__REDISCONNECTION: "redis.openlm.svc.cluster.local:6379"
+    INFRASTRUCTURE__REDIS__CONNECTIONSTRING: "redis.openlm.svc.cluster.local:6379"
+    INFRASTRUCTURE__USESECURITY: "true"
+    INFRASTRUCTURE__AUTHORITYURL: "https://sasm0p000252.adc-apac.corpintra.net/identity"
+    INFRASTRUCTURE__LBFQDN: "sasm0p000252.adc-apac.corpintra.net"
+    KAFKA_BOOTSTRAPSERVERS_CONNECTION: "kafka.openlm.svc.cluster.local:9092"
+    KAFKA_RESTPROXY_URL: "http://openlm-kafka-rest-proxy.openlm.svc.cluster.local:8082"
+    KAFKARESTAPISERVICENAME: "openlm-kafka-rest-proxy.svc.cluster.local"
+    MONGODB__CONNECTIONSTRING: "mongodb://root:password@mongodb.openlm-infrastructure:27017"
+    MONGODB_CONNECTION: "mongodb://root:password@mongodb.openlm-infrastructure:27017"
+    REDIS_CONNECTION: "redis.openlm.svc.cluster.local:6379"
+    REDIS__CONNECTIONSTRING: "redis.openlm.svc.cluster.local:6379"
+    SMTP_ADDRESS: "null"
+    SMTP_HOST: "0"
+    SMTP_PASSWORD: "null"
+    SMTP_PORT: "25"
+    SMTP_SECURITY: "false"
+    SMTP_SSL: "true"
+    SMTP_USER: "null"
+    LOGINSETTINGS__LOCALLOGIN: "true"
+    LOGINSETTINGS__WINDOWSLOGIN: "true"
+    LOGINSETTINGS__WINDOWSLOGINDISPLAYNAME: "Windows Authentication"
+    LOGINSETTINGS__LOCKOUTONFAILURE: "true"
+    LOGINSETTINGS__DEFAULTLOCKOUTTIMEINMINUTES: "10"
+    LOGINSETTINGS__MAXFAILEDACCESSATTEMPTS: "5"
+    LICENSEMANAGER__ISENABLED: "false"
+    LICENSEMANAGER__BaseUrl: "http://openlm-licensemanager.openlm:7248/"
+    AUTHORITY_URL: "https://sasm0p000252.adc-apac.corpintra.net/identity"
+    BROKER_MAIL: "broker-noreply@openlm.com"
+    DSS_MAIL: ""
+    EA_MAIL: ""
+    IDENTITY_DATABASE_CONNECTIONSTRING: "Data Source=sawm0p000464.adc-apac.corpintra.net;Initial Catalog=annapurna_id; User ID=sa;Password=Daimler@1234; Min Pool Size=0;Max Pool Size=100;Encrypt=False;TrustServerCertificate=False"
+    IDENTITY_MAIL: "identity-noreply@openlm.com"
+    LB_FQDN: "sasm0p000252.adc-apac.corpintra.net"
+    ODS_MAIL: ""
+    PERSONAL_DASHBOARD_ADDRESS: "https://sasm0p000252.adc-apac.corpintra.net/personal-dashboard"
+    REPORTING_DATABASE_CONNECTIONSTRING: "Host=postgres.openlm.svc.cluster.local;Port=5432;Database=identitydb;Username=postgres;Password=password;"
+    SENDER_MAIL: ""
+    SERVER_DATABASE_CONNECTIONSTRING: "Data Source=hostname:sawm0p000464.adc-apac.corpintra.net;Initial Catalog=annapurna_op; User ID=sa;Password=Daimler@1234; Min Pool Size=0;Max Pool Size=100;Encrypt=False;TrustServerCertificate=False"
+    UI_OAUTH_ISSUER_URL: "https://sasm0p000252.adc-apac.corpintra.net/identity"
+    generic__personalDashboardAddress: "https://sasm0p000252.adc-apac.corpintra.net/personal-dashboard"
+    GITHUB_CLIENT_ID: ""
+    GITHUB_CLIENT_SECRET: "0"
+    LICENSEMANAGER__RestSettings__BaseUrl: ""
