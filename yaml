@@ -1,0 +1,4 @@
+mkdir -p ~/openlm-yamls
+for d in $(microk8s kubectl get deployments -n openlm -o jsonpath='{.items[*].metadata.name}'); do
+  microk8s kubectl get deployment $d -n openlm -o yaml > ~/openlm-yamls/$d.txt
+done
