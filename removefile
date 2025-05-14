@@ -1,0 +1,1 @@
+find . -name "deploy.yaml" -type f -print0 | xargs -0I {} sed -i '/Values\.imagePull.*/{N;N;N;d;}' {}
