@@ -1,0 +1,29 @@
+# openShiftRoute:
+#   enabled: true
+#   host: "openlm.apps-crc.testing"
+tyk-oss:
+  tyk-gateway:
+    gateway: 
+      securityContext:
+        runAsUser: 1000650000
+        fsGroup: 1000650000
+        runAsNonRoot: true
+
+      containerSecurityContext:
+        runAsNonRoot: true
+        runAsUser: 1000650000
+
+      hostName: openlm.apps-crc.testing
+
+  global:
+    redis:
+      addrs:
+        - openlm-exxon.redis.cache.windows.net:6380
+      pass: iiWeJbXcBVb6OGvYjqYg36rQUe4hYYLCbAzCaEOM6vg=
+      useSSL: true
+      storage:
+        database: 7
+    secrets:
+      APISecret: jrIbPi4LLv1ilBiOb48Hu0RkUpjAns7WFVyMJi87qkSQ5NOdh
+    components:
+      pump: false
